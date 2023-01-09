@@ -16,12 +16,11 @@
 12 print(ob1.groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]))
 ```
 
-I really like your program structure here. 
-Making the program as a class with functions that perform the necessary logic makes it easy to expand the program and incorporate it into other projects without much refactoring. 
+This program has great structure: Making the program as a class with functions that perform the necessary logic makes it easy to expand the program and incorporate it into other projects without much refactoring. 
 However, without any comments describing how your code works and what it needs to work, it becomes much more limited in its reusability. To add a comment in python all you need is a '#' at the start of the line:
 
 ```python
-1 #This is a comment and won't be compiled as part of the code.
+1 #This is a comment and won't be compiled as part of the program.
 ```
 The element iterator for loop on line 4 is a good simple way to extract the elements individually from the array though in future you may want to use "word" or "element" instead of "i" since they are more descriptive of the data stored in this variable. 
 
@@ -44,14 +43,14 @@ Python is a very sensitive language when it comes to indentation spacing and the
 
 Unfortunately your code has another error that prevents it from executing.
 Without a variable or array specified for the sorted function in line 5 your code will not execute. Since there are no comments to describe what argument should be present here I tested the program with "strs", "result" and "i", the last of which made your program function correctly. 
-This is a small mistake but it is important to take note of how simple it can be to fix given the appropriate comments no matter how irrelevant they may seem.
+This is an example of where a comment will be very useful. We can use comments to indicate to users how code should be run and with which parameters it should be run with.
 
 ```python
 1 class Solution:
 2    def groupAnagrams(self, strs):
 3      result = {}
 4      for i in strs:
-5      #x sorts the letters in the current word in the array alphabetically and converts it to a String
+5      #x sorts the letters in the current word in the array, alphabetically, and converts it to String
 6         x = "".join(sorted(i))
 7         if x in result:
 8            result[x].append(i)
@@ -62,7 +61,7 @@ This is a small mistake but it is important to take note of how simple it can be
 13 print(ob1.groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]))
 ```
 
-Now that we've addressed your logic and structure there is a critical feature missing from your code that should not be complex to implement from here. Your program should take inputs dynamically, that is instead of having the array written in the code you should be able to take an input from the user through the command line. A combination of the input() method and split() method will be able to take a list of words from the user and store them as an array for your program to process.
+Now that we've addressed your logic and structure there is a critical feature missing from your code that should not be complex to implement from here. Your program should take inputs dynamically, that is instead of having the array written in the code you should be able to take an input from the user through the command line, or a UI for a more advanced version. A combination of the input() method and split() method will be able to take a list of words from the user and store them as an array for your program to process. input() records the entered values as a string, and split() converts it into an array separating on whitespace by default.
 
 ```python
 1 class Solution:
